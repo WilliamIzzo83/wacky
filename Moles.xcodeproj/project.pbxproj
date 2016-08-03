@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D4EEE401D4BFAB200141656 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE3F1D4BFAB200141656 /* main.m */; };
+		3D4EEE431D4BFAB200141656 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE421D4BFAB200141656 /* AppDelegate.m */; };
+		3D4EEE461D4BFAB200141656 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE451D4BFAB200141656 /* ViewController.m */; };
+		3D4EEE491D4BFAB200141656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4EEE471D4BFAB200141656 /* Main.storyboard */; };
+		3D4EEE4B1D4BFAB200141656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4EEE4A1D4BFAB200141656 /* Assets.xcassets */; };
+		3D4EEE4E1D4BFAB200141656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4EEE4C1D4BFAB200141656 /* LaunchScreen.storyboard */; };
+		3D4EEE581D4BFAE800141656 /* GameLooper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE571D4BFAE800141656 /* GameLooper.m */; };
+		3D4EEE5D1D4BFE3B00141656 /* EventBus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE5C1D4BFE3B00141656 /* EventBus.mm */; };
+		3D4EEE601D4C018700141656 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE5F1D4C018700141656 /* Event.m */; };
+		3D4EEE631D4C025C00141656 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE621D4C025C00141656 /* InputManager.m */; };
+		3D4EEE671D4C04C600141656 /* GameTickEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE661D4C04C600141656 /* GameTickEvent.m */; };
+		3D4EEE6F1D4C0D1900141656 /* Process.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE6E1D4C0D1900141656 /* Process.m */; };
+		3D4EEE721D4C104200141656 /* ProcessManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE711D4C104200141656 /* ProcessManager.mm */; };
+		3D4EEE7B1D4CAEAE00141656 /* TapEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE7A1D4CAEAE00141656 /* TapEvent.m */; };
+		3D4EEE7E1D4CAEBB00141656 /* MoleGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE7D1D4CAEBB00141656 /* MoleGame.m */; };
+		3D4EEE811D4CAEC700141656 /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE801D4CAEC700141656 /* CountDown.m */; };
+		3D4EEE841D4CB15D00141656 /* GeneratePlayField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE831D4CB15D00141656 /* GeneratePlayField.m */; };
+		3D4EEE8E1D4E405A00141656 /* Mole.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE8D1D4E405A00141656 /* Mole.m */; };
+		3D4EEE911D4E43F700141656 /* HoleHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE901D4E43F700141656 /* HoleHit.m */; };
+		3D4EEE941D4E44B100141656 /* MoleDied.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE931D4E44B100141656 /* MoleDied.m */; };
+		3D4EEE971D4E51F300141656 /* CollectMole.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE961D4E51F300141656 /* CollectMole.m */; };
+		3D4EEE9A1D4E99CA00141656 /* MoleEscaped.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE991D4E99CA00141656 /* MoleEscaped.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3D4EEE3B1D4BFAB200141656 /* Moles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D4EEE3F1D4BFAB200141656 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3D4EEE411D4BFAB200141656 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3D4EEE421D4BFAB200141656 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3D4EEE441D4BFAB200141656 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3D4EEE451D4BFAB200141656 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3D4EEE481D4BFAB200141656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D4EEE4A1D4BFAB200141656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D4EEE4D1D4BFAB200141656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D4EEE4F1D4BFAB200141656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D4EEE561D4BFAE800141656 /* GameLooper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLooper.h; path = system/GameLooper.h; sourceTree = "<group>"; };
+		3D4EEE571D4BFAE800141656 /* GameLooper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLooper.m; path = system/GameLooper.m; sourceTree = "<group>"; };
+		3D4EEE5A1D4BFE0500141656 /* IEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEvent.h; path = system/IEvent.h; sourceTree = "<group>"; };
+		3D4EEE5B1D4BFE3B00141656 /* EventBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventBus.h; path = system/EventBus.h; sourceTree = "<group>"; };
+		3D4EEE5C1D4BFE3B00141656 /* EventBus.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = EventBus.mm; path = system/EventBus.mm; sourceTree = "<group>"; };
+		3D4EEE5E1D4C018700141656 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = system/Event.h; sourceTree = "<group>"; };
+		3D4EEE5F1D4C018700141656 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = system/Event.m; sourceTree = "<group>"; };
+		3D4EEE611D4C025C00141656 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputManager.h; path = system/InputManager.h; sourceTree = "<group>"; };
+		3D4EEE621D4C025C00141656 /* InputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputManager.m; path = system/InputManager.m; sourceTree = "<group>"; };
+		3D4EEE651D4C04C600141656 /* GameTickEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameTickEvent.h; path = system/events/GameTickEvent.h; sourceTree = "<group>"; };
+		3D4EEE661D4C04C600141656 /* GameTickEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameTickEvent.m; path = system/events/GameTickEvent.m; sourceTree = "<group>"; };
+		3D4EEE6C1D4C0D0900141656 /* IProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IProcess.h; path = system/IProcess.h; sourceTree = "<group>"; };
+		3D4EEE6D1D4C0D1900141656 /* Process.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Process.h; path = system/Process.h; sourceTree = "<group>"; };
+		3D4EEE6E1D4C0D1900141656 /* Process.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Process.m; path = system/Process.m; sourceTree = "<group>"; };
+		3D4EEE701D4C104200141656 /* ProcessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessManager.h; path = system/ProcessManager.h; sourceTree = "<group>"; };
+		3D4EEE711D4C104200141656 /* ProcessManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ProcessManager.mm; path = system/ProcessManager.mm; sourceTree = "<group>"; };
+		3D4EEE781D4CAE8600141656 /* ISystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISystem.h; path = system/ISystem.h; sourceTree = "<group>"; };
+		3D4EEE791D4CAEAE00141656 /* TapEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapEvent.h; path = game/events/TapEvent.h; sourceTree = "<group>"; };
+		3D4EEE7A1D4CAEAE00141656 /* TapEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapEvent.m; path = game/events/TapEvent.m; sourceTree = "<group>"; };
+		3D4EEE7C1D4CAEBB00141656 /* MoleGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoleGame.h; path = game/processes/MoleGame.h; sourceTree = "<group>"; };
+		3D4EEE7D1D4CAEBB00141656 /* MoleGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoleGame.m; path = game/processes/MoleGame.m; sourceTree = "<group>"; };
+		3D4EEE7F1D4CAEC700141656 /* CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountDown.h; path = game/processes/CountDown.h; sourceTree = "<group>"; };
+		3D4EEE801D4CAEC700141656 /* CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountDown.m; path = game/processes/CountDown.m; sourceTree = "<group>"; };
+		3D4EEE821D4CB15D00141656 /* GeneratePlayField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeneratePlayField.h; path = game/processes/GeneratePlayField.h; sourceTree = "<group>"; };
+		3D4EEE831D4CB15D00141656 /* GeneratePlayField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeneratePlayField.m; path = game/processes/GeneratePlayField.m; sourceTree = "<group>"; };
+		3D4EEE8C1D4E405A00141656 /* Mole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mole.h; path = game/processes/Mole.h; sourceTree = "<group>"; };
+		3D4EEE8D1D4E405A00141656 /* Mole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mole.m; path = game/processes/Mole.m; sourceTree = "<group>"; };
+		3D4EEE8F1D4E43F700141656 /* HoleHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HoleHit.h; path = game/events/HoleHit.h; sourceTree = "<group>"; };
+		3D4EEE901D4E43F700141656 /* HoleHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HoleHit.m; path = game/events/HoleHit.m; sourceTree = "<group>"; };
+		3D4EEE921D4E44B100141656 /* MoleDied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoleDied.h; path = game/events/MoleDied.h; sourceTree = "<group>"; };
+		3D4EEE931D4E44B100141656 /* MoleDied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoleDied.m; path = game/events/MoleDied.m; sourceTree = "<group>"; };
+		3D4EEE951D4E51F300141656 /* CollectMole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectMole.h; sourceTree = "<group>"; };
+		3D4EEE961D4E51F300141656 /* CollectMole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectMole.m; sourceTree = "<group>"; };
+		3D4EEE981D4E99CA00141656 /* MoleEscaped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoleEscaped.h; path = game/events/MoleEscaped.h; sourceTree = "<group>"; };
+		3D4EEE991D4E99CA00141656 /* MoleEscaped.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoleEscaped.m; path = game/events/MoleEscaped.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D4EEE381D4BFAB200141656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D4EEE321D4BFAB200141656 = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE3D1D4BFAB200141656 /* Moles */,
+				3D4EEE3C1D4BFAB200141656 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D4EEE3C1D4BFAB200141656 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE3B1D4BFAB200141656 /* Moles.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D4EEE3D1D4BFAB200141656 /* Moles */ = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE551D4BFAC900141656 /* system */,
+				3D4EEE681D4C078800141656 /* game */,
+				3D4EEE411D4BFAB200141656 /* AppDelegate.h */,
+				3D4EEE421D4BFAB200141656 /* AppDelegate.m */,
+				3D4EEE441D4BFAB200141656 /* ViewController.h */,
+				3D4EEE451D4BFAB200141656 /* ViewController.m */,
+				3D4EEE471D4BFAB200141656 /* Main.storyboard */,
+				3D4EEE4A1D4BFAB200141656 /* Assets.xcassets */,
+				3D4EEE4C1D4BFAB200141656 /* LaunchScreen.storyboard */,
+				3D4EEE4F1D4BFAB200141656 /* Info.plist */,
+				3D4EEE3E1D4BFAB200141656 /* Supporting Files */,
+			);
+			path = Moles;
+			sourceTree = "<group>";
+		};
+		3D4EEE3E1D4BFAB200141656 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE3F1D4BFAB200141656 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3D4EEE551D4BFAC900141656 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE641D4C04AE00141656 /* events */,
+				3D4EEE781D4CAE8600141656 /* ISystem.h */,
+				3D4EEE5A1D4BFE0500141656 /* IEvent.h */,
+				3D4EEE5E1D4C018700141656 /* Event.h */,
+				3D4EEE5F1D4C018700141656 /* Event.m */,
+				3D4EEE5B1D4BFE3B00141656 /* EventBus.h */,
+				3D4EEE5C1D4BFE3B00141656 /* EventBus.mm */,
+				3D4EEE561D4BFAE800141656 /* GameLooper.h */,
+				3D4EEE571D4BFAE800141656 /* GameLooper.m */,
+				3D4EEE611D4C025C00141656 /* InputManager.h */,
+				3D4EEE621D4C025C00141656 /* InputManager.m */,
+				3D4EEE6C1D4C0D0900141656 /* IProcess.h */,
+				3D4EEE6D1D4C0D1900141656 /* Process.h */,
+				3D4EEE6E1D4C0D1900141656 /* Process.m */,
+				3D4EEE701D4C104200141656 /* ProcessManager.h */,
+				3D4EEE711D4C104200141656 /* ProcessManager.mm */,
+			);
+			name = system;
+			sourceTree = "<group>";
+		};
+		3D4EEE641D4C04AE00141656 /* events */ = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE651D4C04C600141656 /* GameTickEvent.h */,
+				3D4EEE661D4C04C600141656 /* GameTickEvent.m */,
+			);
+			name = events;
+			sourceTree = "<group>";
+		};
+		3D4EEE681D4C078800141656 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE771D4CAE6D00141656 /* events */,
+				3D4EEE761D4CAE6600141656 /* processes */,
+			);
+			name = game;
+			sourceTree = "<group>";
+		};
+		3D4EEE761D4CAE6600141656 /* processes */ = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE7C1D4CAEBB00141656 /* MoleGame.h */,
+				3D4EEE7D1D4CAEBB00141656 /* MoleGame.m */,
+				3D4EEE7F1D4CAEC700141656 /* CountDown.h */,
+				3D4EEE801D4CAEC700141656 /* CountDown.m */,
+				3D4EEE821D4CB15D00141656 /* GeneratePlayField.h */,
+				3D4EEE831D4CB15D00141656 /* GeneratePlayField.m */,
+				3D4EEE8C1D4E405A00141656 /* Mole.h */,
+				3D4EEE8D1D4E405A00141656 /* Mole.m */,
+			);
+			name = processes;
+			sourceTree = "<group>";
+		};
+		3D4EEE771D4CAE6D00141656 /* events */ = {
+			isa = PBXGroup;
+			children = (
+				3D4EEE791D4CAEAE00141656 /* TapEvent.h */,
+				3D4EEE7A1D4CAEAE00141656 /* TapEvent.m */,
+				3D4EEE8F1D4E43F700141656 /* HoleHit.h */,
+				3D4EEE901D4E43F700141656 /* HoleHit.m */,
+				3D4EEE921D4E44B100141656 /* MoleDied.h */,
+				3D4EEE931D4E44B100141656 /* MoleDied.m */,
+				3D4EEE951D4E51F300141656 /* CollectMole.h */,
+				3D4EEE961D4E51F300141656 /* CollectMole.m */,
+				3D4EEE981D4E99CA00141656 /* MoleEscaped.h */,
+				3D4EEE991D4E99CA00141656 /* MoleEscaped.m */,
+			);
+			name = events;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D4EEE3A1D4BFAB200141656 /* Moles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D4EEE521D4BFAB200141656 /* Build configuration list for PBXNativeTarget "Moles" */;
+			buildPhases = (
+				3D4EEE371D4BFAB200141656 /* Sources */,
+				3D4EEE381D4BFAB200141656 /* Frameworks */,
+				3D4EEE391D4BFAB200141656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Moles;
+			productName = Moles;
+			productReference = 3D4EEE3B1D4BFAB200141656 /* Moles.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D4EEE331D4BFAB200141656 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = wizzo;
+				TargetAttributes = {
+					3D4EEE3A1D4BFAB200141656 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 27ZNHEEFXW;
+					};
+				};
+			};
+			buildConfigurationList = 3D4EEE361D4BFAB200141656 /* Build configuration list for PBXProject "Moles" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D4EEE321D4BFAB200141656;
+			productRefGroup = 3D4EEE3C1D4BFAB200141656 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D4EEE3A1D4BFAB200141656 /* Moles */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D4EEE391D4BFAB200141656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D4EEE4E1D4BFAB200141656 /* LaunchScreen.storyboard in Resources */,
+				3D4EEE4B1D4BFAB200141656 /* Assets.xcassets in Resources */,
+				3D4EEE491D4BFAB200141656 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D4EEE371D4BFAB200141656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D4EEE8E1D4E405A00141656 /* Mole.m in Sources */,
+				3D4EEE941D4E44B100141656 /* MoleDied.m in Sources */,
+				3D4EEE7B1D4CAEAE00141656 /* TapEvent.m in Sources */,
+				3D4EEE601D4C018700141656 /* Event.m in Sources */,
+				3D4EEE671D4C04C600141656 /* GameTickEvent.m in Sources */,
+				3D4EEE461D4BFAB200141656 /* ViewController.m in Sources */,
+				3D4EEE7E1D4CAEBB00141656 /* MoleGame.m in Sources */,
+				3D4EEE971D4E51F300141656 /* CollectMole.m in Sources */,
+				3D4EEE841D4CB15D00141656 /* GeneratePlayField.m in Sources */,
+				3D4EEE721D4C104200141656 /* ProcessManager.mm in Sources */,
+				3D4EEE431D4BFAB200141656 /* AppDelegate.m in Sources */,
+				3D4EEE6F1D4C0D1900141656 /* Process.m in Sources */,
+				3D4EEE631D4C025C00141656 /* InputManager.m in Sources */,
+				3D4EEE581D4BFAE800141656 /* GameLooper.m in Sources */,
+				3D4EEE9A1D4E99CA00141656 /* MoleEscaped.m in Sources */,
+				3D4EEE5D1D4BFE3B00141656 /* EventBus.mm in Sources */,
+				3D4EEE811D4CAEC700141656 /* CountDown.m in Sources */,
+				3D4EEE401D4BFAB200141656 /* main.m in Sources */,
+				3D4EEE911D4E43F700141656 /* HoleHit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3D4EEE471D4BFAB200141656 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D4EEE481D4BFAB200141656 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3D4EEE4C1D4BFAB200141656 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D4EEE4D1D4BFAB200141656 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D4EEE501D4BFAB200141656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3D4EEE511D4BFAB200141656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D4EEE531D4BFAB200141656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Moles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wizzo.Moles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3D4EEE541D4BFAB200141656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Moles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wizzo.Moles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D4EEE361D4BFAB200141656 /* Build configuration list for PBXProject "Moles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D4EEE501D4BFAB200141656 /* Debug */,
+				3D4EEE511D4BFAB200141656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D4EEE521D4BFAB200141656 /* Build configuration list for PBXNativeTarget "Moles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D4EEE531D4BFAB200141656 /* Debug */,
+				3D4EEE541D4BFAB200141656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D4EEE331D4BFAB200141656 /* Project object */;
+}
