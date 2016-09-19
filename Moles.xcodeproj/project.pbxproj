@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D15C5E81D57AA0500BBA665 /* SequencerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15C5E71D57AA0500BBA665 /* SequencerEvent.m */; };
+		3D15C5F11D57AB4100BBA665 /* SequenceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15C5F01D57AB4100BBA665 /* SequenceData.m */; };
+		3D15C5F51D58633700BBA665 /* PauseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15C5F41D58633700BBA665 /* PauseEvent.m */; };
+		3D15C5F81D58635D00BBA665 /* NoteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15C5F71D58635D00BBA665 /* NoteEvent.m */; };
+		3D1A68581D6488A6009004E5 /* CountdownEndedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A68571D6488A6009004E5 /* CountdownEndedEvent.m */; };
+		3D34EB101D52610500217892 /* Sequencer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D34EB0F1D52610500217892 /* Sequencer.m */; };
+		3D34EB131D5261DC00217892 /* MoleRelease.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D34EB121D5261DC00217892 /* MoleRelease.m */; };
 		3D4EEE401D4BFAB200141656 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE3F1D4BFAB200141656 /* main.m */; };
 		3D4EEE431D4BFAB200141656 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE421D4BFAB200141656 /* AppDelegate.m */; };
 		3D4EEE461D4BFAB200141656 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE451D4BFAB200141656 /* ViewController.m */; };
@@ -29,9 +36,32 @@
 		3D4EEE941D4E44B100141656 /* MoleDied.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE931D4E44B100141656 /* MoleDied.m */; };
 		3D4EEE971D4E51F300141656 /* CollectMole.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE961D4E51F300141656 /* CollectMole.m */; };
 		3D4EEE9A1D4E99CA00141656 /* MoleEscaped.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EEE991D4E99CA00141656 /* MoleEscaped.m */; };
+		3D6970FD1D5B26D800D25291 /* MoleTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6970FC1D5B26D800D25291 /* MoleTrigger.m */; };
+		3D6971001D5B301700D25291 /* AddSequencerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6970FF1D5B301700D25291 /* AddSequencerEvent.m */; };
+		3D6971031D5B322500D25291 /* SequenceGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D6971021D5B322500D25291 /* SequenceGenerator.mm */; };
+		3D69710D1D5B450400D25291 /* Perceptron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D69710B1D5B450400D25291 /* Perceptron.cpp */; };
+		3D6FD5FD1D8EB9780089F504 /* ToneGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6FD5FC1D8EB9780089F504 /* ToneGenerator.m */; };
+		3D6FD6001D8EB9F40089F504 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6FD5FF1D8EB9F40089F504 /* AudioToolbox.framework */; };
+		3D6FD6031D8EFDBB0089F504 /* ToneEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6FD6021D8EFDBB0089F504 /* ToneEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D15C5E61D57AA0500BBA665 /* SequencerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SequencerEvent.h; path = game/events/SequencerEvent.h; sourceTree = "<group>"; };
+		3D15C5E71D57AA0500BBA665 /* SequencerEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SequencerEvent.m; path = game/events/SequencerEvent.m; sourceTree = "<group>"; };
+		3D15C5EF1D57AB4100BBA665 /* SequenceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SequenceData.h; path = data/SequenceData.h; sourceTree = "<group>"; };
+		3D15C5F01D57AB4100BBA665 /* SequenceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SequenceData.m; path = data/SequenceData.m; sourceTree = "<group>"; };
+		3D15C5F21D57AC6D00BBA665 /* TimeRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TimeRange.h; path = data/TimeRange.h; sourceTree = "<group>"; };
+		3D15C5F31D58633700BBA665 /* PauseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseEvent.h; path = game/events/PauseEvent.h; sourceTree = "<group>"; };
+		3D15C5F41D58633700BBA665 /* PauseEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseEvent.m; path = game/events/PauseEvent.m; sourceTree = "<group>"; };
+		3D15C5F61D58635D00BBA665 /* NoteEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteEvent.h; path = game/events/NoteEvent.h; sourceTree = "<group>"; };
+		3D15C5F71D58635D00BBA665 /* NoteEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteEvent.m; path = game/events/NoteEvent.m; sourceTree = "<group>"; };
+		3D1A68561D6488A6009004E5 /* CountdownEndedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountdownEndedEvent.h; path = game/events/CountdownEndedEvent.h; sourceTree = "<group>"; };
+		3D1A68571D6488A6009004E5 /* CountdownEndedEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountdownEndedEvent.m; path = game/events/CountdownEndedEvent.m; sourceTree = "<group>"; };
+		3D34EB0E1D52610500217892 /* Sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sequencer.h; path = game/processes/Sequencer.h; sourceTree = "<group>"; };
+		3D34EB0F1D52610500217892 /* Sequencer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sequencer.m; path = game/processes/Sequencer.m; sourceTree = "<group>"; };
+		3D34EB111D5261DC00217892 /* MoleRelease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoleRelease.h; path = game/events/MoleRelease.h; sourceTree = "<group>"; };
+		3D34EB121D5261DC00217892 /* MoleRelease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoleRelease.m; path = game/events/MoleRelease.m; sourceTree = "<group>"; };
+		3D34EB151D52637500217892 /* MoleReleaseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoleReleaseData.h; path = data/MoleReleaseData.h; sourceTree = "<group>"; };
 		3D4EEE3B1D4BFAB200141656 /* Moles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4EEE3F1D4BFAB200141656 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D4EEE411D4BFAB200141656 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +107,20 @@
 		3D4EEE961D4E51F300141656 /* CollectMole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectMole.m; sourceTree = "<group>"; };
 		3D4EEE981D4E99CA00141656 /* MoleEscaped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoleEscaped.h; path = game/events/MoleEscaped.h; sourceTree = "<group>"; };
 		3D4EEE991D4E99CA00141656 /* MoleEscaped.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoleEscaped.m; path = game/events/MoleEscaped.m; sourceTree = "<group>"; };
+		3D6970FB1D5B26D800D25291 /* MoleTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoleTrigger.h; path = game/processes/MoleTrigger.h; sourceTree = "<group>"; };
+		3D6970FC1D5B26D800D25291 /* MoleTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoleTrigger.m; path = game/processes/MoleTrigger.m; sourceTree = "<group>"; };
+		3D6970FE1D5B301700D25291 /* AddSequencerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddSequencerEvent.h; path = game/events/AddSequencerEvent.h; sourceTree = "<group>"; };
+		3D6970FF1D5B301700D25291 /* AddSequencerEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddSequencerEvent.m; path = game/events/AddSequencerEvent.m; sourceTree = "<group>"; };
+		3D6971011D5B322500D25291 /* SequenceGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SequenceGenerator.h; path = game/processes/SequenceGenerator.h; sourceTree = "<group>"; };
+		3D6971021D5B322500D25291 /* SequenceGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SequenceGenerator.mm; path = game/processes/SequenceGenerator.mm; sourceTree = "<group>"; };
+		3D6971041D5B326400D25291 /* TempoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempoData.h; path = data/TempoData.h; sourceTree = "<group>"; };
+		3D69710B1D5B450400D25291 /* Perceptron.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Perceptron.cpp; path = game/misc/Perceptron.cpp; sourceTree = "<group>"; };
+		3D69710C1D5B450400D25291 /* Perceptron.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Perceptron.hpp; path = game/misc/Perceptron.hpp; sourceTree = "<group>"; };
+		3D6FD5FB1D8EB9780089F504 /* ToneGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToneGenerator.h; path = system/ToneGenerator.h; sourceTree = "<group>"; };
+		3D6FD5FC1D8EB9780089F504 /* ToneGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToneGenerator.m; path = system/ToneGenerator.m; sourceTree = "<group>"; };
+		3D6FD5FF1D8EB9F40089F504 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3D6FD6011D8EFDBB0089F504 /* ToneEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToneEvent.h; path = system/events/ToneEvent.h; sourceTree = "<group>"; };
+		3D6FD6021D8EFDBB0089F504 /* ToneEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToneEvent.m; path = system/events/ToneEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,17 +128,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6FD6001D8EB9F40089F504 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D34EB141D52634F00217892 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3D34EB151D52637500217892 /* MoleReleaseData.h */,
+				3D15C5EF1D57AB4100BBA665 /* SequenceData.h */,
+				3D15C5F01D57AB4100BBA665 /* SequenceData.m */,
+				3D15C5F21D57AC6D00BBA665 /* TimeRange.h */,
+				3D6971041D5B326400D25291 /* TempoData.h */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		3D4EEE321D4BFAB200141656 = {
 			isa = PBXGroup;
 			children = (
 				3D4EEE3D1D4BFAB200141656 /* Moles */,
 				3D4EEE3C1D4BFAB200141656 /* Products */,
+				3D6FD5FE1D8EB9F30089F504 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +209,8 @@
 				3D4EEE6E1D4C0D1900141656 /* Process.m */,
 				3D4EEE701D4C104200141656 /* ProcessManager.h */,
 				3D4EEE711D4C104200141656 /* ProcessManager.mm */,
+				3D6FD5FB1D8EB9780089F504 /* ToneGenerator.h */,
+				3D6FD5FC1D8EB9780089F504 /* ToneGenerator.m */,
 			);
 			name = system;
 			sourceTree = "<group>";
@@ -160,6 +220,8 @@
 			children = (
 				3D4EEE651D4C04C600141656 /* GameTickEvent.h */,
 				3D4EEE661D4C04C600141656 /* GameTickEvent.m */,
+				3D6FD6011D8EFDBB0089F504 /* ToneEvent.h */,
+				3D6FD6021D8EFDBB0089F504 /* ToneEvent.m */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -167,6 +229,8 @@
 		3D4EEE681D4C078800141656 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				3D6971071D5B444800D25291 /* misc */,
+				3D34EB141D52634F00217892 /* data */,
 				3D4EEE771D4CAE6D00141656 /* events */,
 				3D4EEE761D4CAE6600141656 /* processes */,
 			);
@@ -178,12 +242,18 @@
 			children = (
 				3D4EEE7C1D4CAEBB00141656 /* MoleGame.h */,
 				3D4EEE7D1D4CAEBB00141656 /* MoleGame.m */,
+				3D6970FB1D5B26D800D25291 /* MoleTrigger.h */,
+				3D6970FC1D5B26D800D25291 /* MoleTrigger.m */,
 				3D4EEE7F1D4CAEC700141656 /* CountDown.h */,
 				3D4EEE801D4CAEC700141656 /* CountDown.m */,
 				3D4EEE821D4CB15D00141656 /* GeneratePlayField.h */,
 				3D4EEE831D4CB15D00141656 /* GeneratePlayField.m */,
 				3D4EEE8C1D4E405A00141656 /* Mole.h */,
 				3D4EEE8D1D4E405A00141656 /* Mole.m */,
+				3D34EB0E1D52610500217892 /* Sequencer.h */,
+				3D34EB0F1D52610500217892 /* Sequencer.m */,
+				3D6971011D5B322500D25291 /* SequenceGenerator.h */,
+				3D6971021D5B322500D25291 /* SequenceGenerator.mm */,
 			);
 			name = processes;
 			sourceTree = "<group>";
@@ -201,8 +271,37 @@
 				3D4EEE961D4E51F300141656 /* CollectMole.m */,
 				3D4EEE981D4E99CA00141656 /* MoleEscaped.h */,
 				3D4EEE991D4E99CA00141656 /* MoleEscaped.m */,
+				3D34EB111D5261DC00217892 /* MoleRelease.h */,
+				3D34EB121D5261DC00217892 /* MoleRelease.m */,
+				3D15C5E61D57AA0500BBA665 /* SequencerEvent.h */,
+				3D15C5E71D57AA0500BBA665 /* SequencerEvent.m */,
+				3D15C5F31D58633700BBA665 /* PauseEvent.h */,
+				3D15C5F41D58633700BBA665 /* PauseEvent.m */,
+				3D15C5F61D58635D00BBA665 /* NoteEvent.h */,
+				3D15C5F71D58635D00BBA665 /* NoteEvent.m */,
+				3D6970FE1D5B301700D25291 /* AddSequencerEvent.h */,
+				3D6970FF1D5B301700D25291 /* AddSequencerEvent.m */,
+				3D1A68561D6488A6009004E5 /* CountdownEndedEvent.h */,
+				3D1A68571D6488A6009004E5 /* CountdownEndedEvent.m */,
 			);
 			name = events;
+			sourceTree = "<group>";
+		};
+		3D6971071D5B444800D25291 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				3D69710B1D5B450400D25291 /* Perceptron.cpp */,
+				3D69710C1D5B450400D25291 /* Perceptron.hpp */,
+			);
+			name = misc;
+			sourceTree = "<group>";
+		};
+		3D6FD5FE1D8EB9F30089F504 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D6FD5FF1D8EB9F40089F504 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,25 +375,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D15C5E81D57AA0500BBA665 /* SequencerEvent.m in Sources */,
 				3D4EEE8E1D4E405A00141656 /* Mole.m in Sources */,
+				3D34EB101D52610500217892 /* Sequencer.m in Sources */,
 				3D4EEE941D4E44B100141656 /* MoleDied.m in Sources */,
 				3D4EEE7B1D4CAEAE00141656 /* TapEvent.m in Sources */,
 				3D4EEE601D4C018700141656 /* Event.m in Sources */,
+				3D6971031D5B322500D25291 /* SequenceGenerator.mm in Sources */,
 				3D4EEE671D4C04C600141656 /* GameTickEvent.m in Sources */,
 				3D4EEE461D4BFAB200141656 /* ViewController.m in Sources */,
 				3D4EEE7E1D4CAEBB00141656 /* MoleGame.m in Sources */,
+				3D6971001D5B301700D25291 /* AddSequencerEvent.m in Sources */,
 				3D4EEE971D4E51F300141656 /* CollectMole.m in Sources */,
+				3D34EB131D5261DC00217892 /* MoleRelease.m in Sources */,
+				3D1A68581D6488A6009004E5 /* CountdownEndedEvent.m in Sources */,
 				3D4EEE841D4CB15D00141656 /* GeneratePlayField.m in Sources */,
 				3D4EEE721D4C104200141656 /* ProcessManager.mm in Sources */,
+				3D6970FD1D5B26D800D25291 /* MoleTrigger.m in Sources */,
+				3D69710D1D5B450400D25291 /* Perceptron.cpp in Sources */,
 				3D4EEE431D4BFAB200141656 /* AppDelegate.m in Sources */,
+				3D15C5F11D57AB4100BBA665 /* SequenceData.m in Sources */,
 				3D4EEE6F1D4C0D1900141656 /* Process.m in Sources */,
 				3D4EEE631D4C025C00141656 /* InputManager.m in Sources */,
 				3D4EEE581D4BFAE800141656 /* GameLooper.m in Sources */,
 				3D4EEE9A1D4E99CA00141656 /* MoleEscaped.m in Sources */,
+				3D6FD5FD1D8EB9780089F504 /* ToneGenerator.m in Sources */,
+				3D15C5F81D58635D00BBA665 /* NoteEvent.m in Sources */,
 				3D4EEE5D1D4BFE3B00141656 /* EventBus.mm in Sources */,
 				3D4EEE811D4CAEC700141656 /* CountDown.m in Sources */,
 				3D4EEE401D4BFAB200141656 /* main.m in Sources */,
 				3D4EEE911D4E43F700141656 /* HoleHit.m in Sources */,
+				3D6FD6031D8EFDBB0089F504 /* ToneEvent.m in Sources */,
+				3D15C5F51D58633700BBA665 /* PauseEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 27ZNHEEFXW;
 				INFOPLIST_FILE = Moles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wizzo.Moles;
@@ -419,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 27ZNHEEFXW;
 				INFOPLIST_FILE = Moles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wizzo.Moles;

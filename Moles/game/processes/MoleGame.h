@@ -11,5 +11,6 @@
 
 @interface MoleGame : Process
 - (instancetype)initWithHolesViews:(NSArray<UIView*>*)holesViews
-                       andTimeView:(UIView*)timeView;
+                          timeView:(UIView*)timeView
+                     andScoreLabel:(UILabel*)scoreLabel;
 @end

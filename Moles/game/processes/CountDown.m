@@ -7,6 +7,9 @@
 //
 
 #import "CountDown.h"
+#import "EventBus.h"
+#import "CountdownEndedEvent.h"
+
 @interface CountDown() {
     NSTimeInterval countDownDuration;
     NSTimeInterval elapsedTime;
@@ -22,8 +25,9 @@
 - (void)onUpdate:(NSTimeInterval)dt {
     
     if (self->elapsedTime > self->countDownDuration) {
+        CountdownEndedEvent* cde = [[CountdownEndedEvent alloc] init];
+        [[EventBus defaultBus] queueEvent:cde];
         [self success];
-        NSLog(@"go!");
     }
     
     self->elapsedTime+=dt;

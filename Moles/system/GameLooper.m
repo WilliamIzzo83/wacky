@@ -55,7 +55,7 @@
 - (void)displayLinkDelegate {
     GameTickEvent* tickEvt = [[GameTickEvent alloc] init];
     tickEvt.timestamp = self.dlink.timestamp;
-    const NSTimeInterval dt = 0.033;
+    const NSTimeInterval dt = self.dlink.duration;
     tickEvt.dt = dt;
     [self.stdBus fireEvent:tickEvt];
     [self.stdBus update:dt];

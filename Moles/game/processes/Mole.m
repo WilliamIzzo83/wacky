@@ -23,10 +23,7 @@ typedef enum : NSUInteger {
 
 @interface Mole()<EventBusDelegate> {
     UIView* __weak holeView_;
-    NSTimeInterval appearanceTime_;
-    NSTimeInterval permanenceTime_;
-    NSTimeInterval retreatTime_;
-    NSTimeInterval dieTime_;
+    MoleReleaseData releaseData;
     MoleState state_;
 }
 - (BOOL)IsHittable;
@@ -34,24 +31,30 @@ typedef enum : NSUInteger {
 
 @implementation Mole
 
-@synthesize holeIndex = holeIndex_;
-
-- (instancetype)initWithHoleView:(UIView *)holeView holeIndex:(NSUInteger)holeIndex {
+- (instancetype)initWithHoleView:(UIView*)holeView
+                     releaseData:(MoleReleaseData)rData {
     self = [super init];
     self->holeView_ = holeView;
-    self->holeIndex_ = holeIndex;
-    self->state_ = MoleState_Appearing;
+    self->releaseData = rData;
+    return self;
+}
+
+
+- (instancetype)initWithHoleView:(UIView *)holeView
+                       holeIndex:(NSUInteger)holeIndex {
+    
+    MoleReleaseData mrData = {
+      holeIndex, 0.4, 0.5, 0.4, 0.3
+    };
+    
+    self = [self initWithHoleView:holeView
+                      releaseData:mrData];
     return self;
 }
 
 
 - (void)onInit {
-    // TODO: read those from a configuration file maybe?
-    self->permanenceTime_ = 0.4;
-    self->appearanceTime_ = 0.5;
-    self->retreatTime_ = 0.4;
-    self->dieTime_ = 0.3;
-    
+    self->state_ = MoleState_Appearing;
     [[EventBus defaultBus] registerListener:self
                                forEventType:kEventHoleHit];
 }
@@ -61,29 +64,29 @@ typedef enum : NSUInteger {
     // Dumb mole state machine
     switch (self->state_) {
         case MoleState_Appearing:{
-            self->appearanceTime_ -= dt;
-            if (self->appearanceTime_ <= 0.0) {
+            self->releaseData.appearanceTime -= dt;
+            if (self->releaseData.appearanceTime <= 0.0) {
                 self->state_ = MoleState_Idling;
             }
             [self->holeView_ setBackgroundColor:[UIColor orangeColor]];
         } break;
         case MoleState_Idling :{
-            self->permanenceTime_ -= dt;
-            if (self->permanenceTime_ <= 0.0) {
+            self->releaseData.permanenceTime -= dt;
+            if (self->releaseData.permanenceTime <= 0.0) {
                 self->state_ = MoleState_Retreating;
             }
             [self->holeView_ setBackgroundColor:[UIColor greenColor]];
         } break;
         case MoleState_Retreating: {
-            self->retreatTime_ -= dt;
-            if (self->retreatTime_ <= 0.0) {
+            self->releaseData.retreatTime -= dt;
+            if (self->releaseData.retreatTime <= 0.0) {
                 self->state_ = MoleState_Done;
             }
             [self->holeView_ setBackgroundColor:[UIColor blueColor]];
         } break;
         case MoleState_Dying: {
-            self->dieTime_ -= dt;
-            if (self->dieTime_ <= 0.0) {
+            self->releaseData.dieTime -= dt;
+            if (self->releaseData.dieTime <= 0.0) {
                 self->state_ = MoleState_Done;
                 MoleDied* diedEvt = [[MoleDied alloc] init];
                 [[EventBus defaultBus] queueEvent:diedEvt];
@@ -103,8 +106,9 @@ typedef enum : NSUInteger {
 }
 
 - (void)onSuccess {
+    [self->holeView_ setBackgroundColor:[UIColor clearColor]];
     CollectMole* collectMole = [[CollectMole alloc] init];
-    collectMole->holeIndex = self->holeIndex_;
+    collectMole->holeIndex = self->releaseData.holeIndex;
     [[EventBus defaultBus] queueEvent:collectMole];
 }
 
@@ -122,7 +126,7 @@ typedef enum : NSUInteger {
     assert(type == kEventHoleHit);
     HoleHit* hitEvent = (HoleHit*)event;
     
-    if (hitEvent->holeIndex != self->holeIndex_) {
+    if (hitEvent->holeIndex != self->releaseData.holeIndex) {
         return;
     }
     

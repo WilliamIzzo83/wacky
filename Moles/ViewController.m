@@ -15,14 +15,17 @@
 #import "CountDown.h"
 #import "MoleGame.h"
 #import "GeneratePlayField.h"
+#import "ToneGenerator.h"
 
 @interface ViewController ()
 - (void)setupGameUI;
 - (void)tapGestureRecognizerDlg:(UITapGestureRecognizer*)tap;
 @property (strong, nonatomic) GameLooper* gameLooper;
+@property (strong, nonatomic) ToneGenerator* toneGenerator;
 @property (strong, nonatomic) InputManager* inputManager;
 @property (strong, nonatomic) UIView* holesContainerView;
 @property (strong, nonatomic) UIView* timeView;
+@property (strong, nonatomic) UILabel* scoreLabel;
 @property (strong, nonatomic) NSMutableArray<UIView*>* holesViews;
 @end
 
@@ -41,6 +44,7 @@
     
     self.gameLooper = [[GameLooper alloc] init];
     self.inputManager = [[InputManager alloc] init];
+    self.toneGenerator = [[ToneGenerator alloc] init];
     
     NSMutableArray<UIView*>* theHoles = self.holesViews;
     
@@ -48,19 +52,20 @@
     [[GeneratePlayField alloc] initWithGameView:self.holesContainerView
                                 andHolesViewRef:theHoles];
     
-    CountDown* countDown = [[CountDown alloc] init];
-    
     MoleGame* mGame = [[MoleGame alloc] initWithHolesViews:self.holesViews
-                                               andTimeView:self.timeView];
+                                                  timeView:self.timeView
+                                             andScoreLabel:self.scoreLabel];
     
-    [genPlayField addChild:countDown];
+    
     [genPlayField addChild:mGame];
     
     [[ProcessManager defaultProcManager] addProcess:genPlayField];
     
     
     [self.inputManager startUp];
+    [self.toneGenerator startUp];
     [self.gameLooper startUp];
+    
 }
 
 - (void)setupGameUI {
@@ -77,6 +82,11 @@
     [self.timeView setBackgroundColor:[UIColor greenColor]];
     [self.view addSubview:self.timeView];
     
+    CGRect scFrame = tvFrame;
+    self.scoreLabel = [[UILabel alloc] initWithFrame:scFrame];
+    self.scoreLabel.backgroundColor = [UIColor clearColor];
+    self.scoreLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    [self.view addSubview:self.scoreLabel];
     
     CGFloat hcSize = screenFrame.size.width * 0.86;
     CGFloat halfFieldSize = hcSize * 0.5;

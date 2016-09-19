@@ -16,4 +16,5 @@
 
 @interface ProcessManager(Shared)
 + (ProcessManager*)defaultProcManager;
+
 @end

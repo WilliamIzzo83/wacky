@@ -15,64 +15,64 @@
 #import "MoleEscaped.h"
 #import "MoleDied.h"
 #import "CollectMole.h"
+#import "MoleRelease.h"
+#import "Sequencer.h"
+#import "MoleTrigger.h"
+#import "SequenceGenerator.h"
+#import "CountdownEndedEvent.h"
+#import "CountDown.h"
+#import "NoteEvent.h"
+#import "ToneEvent.h"
+
+typedef enum GameState {
+    GameState_Initializing,
+    GameState_GameStart,
+    GameState_GameOver
+} GameState;
 
 @interface MoleGame()<EventBusDelegate>{
-    NSTimeInterval remainingGameTime;
-    NSTimeInterval elapsedTime;
-    CGFloat initialTimeViewLength;
-    CGFloat timeViewVsGameTimeProportion;
-    NSTimeInterval moleSpawnElapsedTime;
-    NSTimeInterval moleSpawnTime;
-    NSUInteger maxActiveMoles;
-    NSUInteger activeMolesCount;
-    char* busyHoles;
+    ProcessManager* procMan_;
+    NSUInteger score;
+    GameState gameState;
+    
+    
+    Sequencer* seqProc;
+    SequenceGenerator* seqGenProc;
+    MoleTrigger* moleTrigProc;
 }
 
-- (void)unlockAllHoles;
-- (BOOL)holeIsBusy:(NSUInteger)holeIdx;
-- (BOOL)lockHole:(NSUInteger)holeIdx;
-- (void)unlockHole:(NSUInteger)holeIdx;
-
-- (void)updateTimeBar:(NSTimeInterval)dt;
-- (void)updateMoles:(NSTimeInterval)dt;
+- (void)startCountdown;
+- (void)setupGame;
+- (void)tearDownGame;
+- (void)gameOver;
+- (void)updateScoreLabel;
 
 @property (strong, nonatomic) NSArray<UIView*>* holesViews;
 @property (strong, nonatomic) UIView* timeView;
 @property (weak, nonatomic) EventBus* eBus;
+@property (weak, nonatomic) UILabel* scoreLabel;
 
 @end
 
 @implementation MoleGame
+
 - (instancetype)initWithHolesViews:(NSArray<UIView*>*)holesViews
-                       andTimeView:(UIView*)timeView {
+                          timeView:(UIView *)timeView
+                     andScoreLabel:(UILabel *)scoreLabel {
     self = [super init];
     self.holesViews = holesViews;
     self.timeView = timeView;
+    self.scoreLabel = scoreLabel;
     self.eBus = [EventBus defaultBus];
-    self->busyHoles = (char*)(malloc(sizeof(char) * self.holesViews.count));
-    
+    self->procMan_ = [ProcessManager defaultProcManager];
     return self;
 }
 
-- (void)dealloc {
-    free(self->busyHoles);
-}
 
 - (void)onInit {
-    [self unlockAllHoles];
-    self->maxActiveMoles = 1;
-    self->activeMolesCount = 0;
-    self->remainingGameTime = 120.0;
-    self->moleSpawnTime = 1.0;
-    self->moleSpawnElapsedTime = 0.0;
-    self->initialTimeViewLength = self.timeView.frame.size.width;
-    self->timeViewVsGameTimeProportion = self->initialTimeViewLength / self->remainingGameTime;
-    
+    self->gameState = GameState_Initializing;
     [self.eBus registerListener:self
                    forEventType:kEventTap];
-    
-    [self.eBus registerListener:self
-                   forEventType:kEventCollectMole];
     
     [self.eBus registerListener:self
                    forEventType:kEventMoleEscaped];
@@ -80,90 +80,79 @@
     [self.eBus registerListener:self
                    forEventType:kEventMoleDied];
     
+    [self.eBus registerListener:self
+                   forEventType:kEventMoleRelease];
+    
+    [self.eBus registerListener:self
+                   forEventType:kEventCountdownEnded];
+    
+    [self.eBus registerListener:self
+                   forEventType:kEventSequencerNote];
+    [self startCountdown];
+}
+
+- (void)startCountdown {
+    CountDown* cdProc = [[CountDown alloc] init];
+    [self->procMan_ addProcess:cdProc];
+}
+
+- (void)setupGame {
+    self->score = 0;
+    self->_timeView.backgroundColor = [UIColor greenColor];
+    
+    self->seqGenProc = [[SequenceGenerator alloc] init];
+    self->seqProc = [[Sequencer alloc] init];
+    
+    self->moleTrigProc = [[MoleTrigger alloc]
+                          initWithHolesCount:self->_holesViews.count];
+    
+    [self->procMan_ addProcess:self->seqProc];
+    [self->procMan_ addProcess:self->seqGenProc];
+    [self->procMan_ addProcess:self->moleTrigProc];
+}
+
+- (void)tearDownGame {
+    [self->seqGenProc success];
+    [self->seqProc success];
+    [self->moleTrigProc success];
+    
+    self->seqGenProc = nil;
+    self->seqProc = nil;
+    self->moleTrigProc = nil;
 }
 
 - (void)onUpdate:(NSTimeInterval)dt {
     [super onUpdate:dt];
     
-//    self->remainingGameTime -= dt;
-//    if (self->remainingGameTime <= 0) {
-//        [self success];
-//        return;
-//    }
-    
-    [self updateMoles:dt];
-    [self updateTimeBar:dt];
-    
-    
+
+    [self updateScoreLabel];
+      
 }
 
-- (void)updateTimeBar:(NSTimeInterval)dt {
-    CGRect tvFrame = self.timeView.frame;
-    tvFrame.size.width = self->timeViewVsGameTimeProportion * self->remainingGameTime;
-    self.timeView.frame = tvFrame;
+- (void)updateScoreLabel {
+    [self.scoreLabel setText:[NSString stringWithFormat:@"%@", @(self->score)]];
 }
 
-- (void)updateMoles:(NSTimeInterval)dt {
-    self->moleSpawnElapsedTime += dt;
-    if (self->moleSpawnElapsedTime < self->moleSpawnTime) {
-        return;
-    }
-    
-    
-    self->moleSpawnElapsedTime = 0.0;
-    
-    if (self->activeMolesCount >= self->maxActiveMoles) {
-        return;
-    }
-    
-    
-    NSUInteger holeIdx = (NSUInteger)arc4random_uniform(self->_holesViews.count);
-    if (![self lockHole:holeIdx]) {
-        return;
-    }
-    
-    ++self->activeMolesCount;
-    
-    
-    
-    Mole* mole = [[Mole alloc] initWithHoleView:self.holesViews[holeIdx]
-                                      holeIndex:holeIdx];
-    
-    ProcessManager* pm = [ProcessManager defaultProcManager];
-    [pm addProcess:mole];
-}
+- (void)gameOver {
+    // Shuts down tone generator
+    ToneEvent* toneEvt = [[ToneEvent alloc] init];
+    toneEvt->pitch = 0.0;
+    toneEvt->duration = 0.0;
+    [self.eBus queueEvent:toneEvt];
 
-- (void)unlockAllHoles {
-    memset(self->busyHoles, 0, sizeof(char) * self.holesViews.count);
-}
-
-- (BOOL)lockHole:(NSUInteger)holeIdx {
-    if ([self holeIsBusy:holeIdx]) {
-        return NO;
-    }
-    
-    self->busyHoles[holeIdx] = 1;
-    return YES;
-}
-
-- (void)unlockHole:(NSUInteger)holeIdx {
-    self->busyHoles[holeIdx] = 0;
-}
-
-- (BOOL)holeIsBusy:(NSUInteger)holeIdx {
-    return self->busyHoles[holeIdx];
+    [self.timeView setBackgroundColor:[UIColor redColor]];
 }
 
 - (void)onSuccess {
-    CGRect tvFrame = self.timeView.frame;
-    tvFrame.size.width = self->initialTimeViewLength;
-    self.timeView.frame = tvFrame;
-    [self.timeView setBackgroundColor:[UIColor redColor]];
+    [self tearDownGame];
 }
 
 - (void)receivedEvent:(id<IEvent>)event withType:(NSUInteger)type {
     
     switch (type) {
+        case kEventCountdownEnded: {
+            [self setupGame];
+        } break;
         case kEventTap:{
             TapEvent* tap = (TapEvent*)event;
             CGPoint tapPoint = CGPointMake(tap.x, tap.y);
@@ -177,18 +166,30 @@
                 ++vIdx;
             }
         }break;
-        case kEventCollectMole: {
-            --self->activeMolesCount;
-            CollectMole* collectEvt = (CollectMole*)event;
-            [self unlockHole:collectEvt->holeIndex];
-            [self.holesViews[collectEvt->holeIndex]
-             setBackgroundColor:[UIColor clearColor]];
+        case kEventMoleRelease : {
+            MoleRelease* rlsEvt = (MoleRelease*)event;
+            NSUInteger holeIdx = rlsEvt->releaseData.holeIndex;
+            Mole* mole = [[Mole alloc] initWithHoleView:self.holesViews[holeIdx]
+                                            releaseData:rlsEvt->releaseData];
+
+            [self->procMan_ addProcess:mole];
         }break;
         case kEventMoleEscaped: {
-            // TODO : apply some gameplay modifier
+            self->gameState = GameState_GameOver;
+            [self gameOver];
+            [self tearDownGame];
+            [self startCountdown];
         }break;
         case kEventMoleDied: {
-            // TODO : apply some gameplay modifier
+            ++self->score;
+        }break;
+        case kEventSequencerNote: {
+            NoteEvent* noteEvt = (NoteEvent*)event;
+            ToneEvent* toneEvt = [[ToneEvent alloc] init];
+            toneEvt->pitch = noteEvt->pitch;
+            toneEvt->duration = noteEvt->durationTime;
+
+            [self.eBus queueEvent:toneEvt];
         }break;
         default:
             break;

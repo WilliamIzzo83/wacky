@@ -37,9 +37,10 @@ typedef std::list<Process*> PMCProcessList;
             [process inited];
         }
         
-        [process onUpdate:dt];
+        
         
         if (![process didEnd]) {
+            [process onUpdate:dt];
             ++it;
             continue;
         }
